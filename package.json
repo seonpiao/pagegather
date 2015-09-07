@@ -1,0 +1,45 @@
+{
+  "name": "pagegather",
+  "version": "0.1.0",
+  "dependencies": {
+    "async": "*",
+    "casper": "^0.1.1",
+    "co": "3.1.0",
+    "flow-js": "~0.5.3",
+    "iconv-lite": "*",
+    "image-size": "*",
+    "log4js": "*",
+    "moment": "^2.8.4",
+    "node.extend": "*",
+    "request": "2.34.0",
+    "retryjs": "*",
+    "seajs": "*",
+    "taobao_spider": "*",
+    "thunkify": "^2.1.2",
+    "underscore": "*"
+  },
+  "main": "common.js",
+  "_id": "pagegather@0.1.0",
+  "_shasum": "b4307043bf0126a85c250424a48e3a85afbd754c",
+  "_from": "pagegather@*",
+  "scripts": {},
+  "_npmVersion": "2.10.1",
+  "_nodeVersion": "0.12.4",
+  "_npmUser": {
+    "name": "seon",
+    "email": "seon.piao@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "seon",
+      "email": "seon.piao@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "b4307043bf0126a85c250424a48e3a85afbd754c",
+    "tarball": "http://registry.npmjs.org/pagegather/-/pagegather-0.1.0.tgz"
+  },
+  "directories": {},
+  "_resolved": "http://registry.npmjs.org/pagegather/-/pagegather-0.1.0.tgz",
+  "readme": "ERROR: No README data found!"
+}
