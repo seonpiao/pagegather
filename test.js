@@ -4,7 +4,7 @@ var Gather = require('./index');
 describe('Gather', function() {
   describe('Gather#fetch', function() {
     this.timeout(30000);
-    it.skip('打开页面', function(done) {
+    it('打开页面', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/"
@@ -15,7 +15,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取链接文字', function(done) {
+    it('获取链接文字', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -29,7 +29,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取链接文字数组', function(done) {
+    it('获取链接文字数组', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -44,7 +44,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取多个属性', function(done) {
+    it('获取多个属性', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -60,7 +60,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('先删除一个元素，再获取多个属性', function(done) {
+    it('先删除一个元素，再获取多个属性', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -77,7 +77,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('先删除多个元素，再获取多个属性', function(done) {
+    it('先删除多个元素，再获取多个属性', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -94,7 +94,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取attr', function(done) {
+    it('获取attr', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -108,7 +108,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取多个attr中的一个', function(done) {
+    it('获取多个attr中的一个', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -122,7 +122,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('获取attr数组', function(done) {
+    it('获取attr数组', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -137,7 +137,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('跨页面获取数据', function(done) {
+    it('跨页面获取数据', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -151,7 +151,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('跨页面获取数据数组', function(done) {
+    it('跨页面获取数据数组', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -166,7 +166,7 @@ describe('Gather', function() {
       });
     });
 
-    it.skip('跨多级页面获取数据数组', function(done) {
+    it('跨多级页面获取数据数组', function(done) {
       new Gather({
         settings: {
           "url": "http://www.baidu.com/",
@@ -195,6 +195,20 @@ describe('Gather', function() {
       }).fetch(function(err, result) {
         assert.equal(result.text[0], '知道');
         assert.equal(result.text[1], '音乐');
+        done();
+      });
+    });
+
+    it('获取javascript变量', function(done) {
+      new Gather({
+        settings: {
+          "url": "http://www.letv.com/ptv/vplay/23325364.html",
+          config: {
+            js: 'javascript:window.__INFO__.vid'
+          }
+        }
+      }).fetch(function(err, result) {
+        assert.equal(result.js, 23325364);
         done();
       });
     });

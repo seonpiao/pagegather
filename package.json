@@ -1,9 +1,8 @@
 {
   "name": "pagegather",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "dependencies": {
     "async": "*",
-    "casper": "^0.1.1",
     "co": "3.1.0",
     "flow-js": "~0.5.3",
     "iconv-lite": "*",

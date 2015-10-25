@@ -111,7 +111,7 @@ module.exports = function(flow) {
 			});
 
 			retry.start(function(done, retry) {
-				exec('phantomjs --disk-cache=true ' + phantomFile, {
+				exec('phantomjs --disk-cache=true --cookies-file=cookies.txt ' + phantomFile, {
 					cwd: path.join(__dirname, 'phantom')
 				}, function(err, stdout, stderr) {
 					var json = stdout.match(/-----json-----(.*)-----json end-----/)[1];

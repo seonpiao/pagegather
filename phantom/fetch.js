@@ -9,9 +9,9 @@ function initPage(options) {
 
   options = options || {};
   options.timeoutCallback = options.timeoutCallback || function(request) {
-    // page.stop();
-    // console.log('-----json-----null-----json end-----');
-    // phantom.exit();
+    page.stop();
+    console.log('-----json-----null-----json end-----');
+    phantom.exit();
   };
 
   page.onConsoleMessage = function(msg, lineNum, sourceId) {
@@ -28,7 +28,7 @@ function initPage(options) {
   };
 
   page.onResourceTimeout = options.timeoutCallback;
-  page.settings.resourceTimeout = options.timeout || 10000;
+  page.settings.resourceTimeout = options.timeout || 30000;
   page.settings.loadImages = false;
   page.customHeaders = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.71 Safari/537.36'
@@ -138,6 +138,7 @@ openPage(settings.content || settings.url, function(status) {
                   selector.some(function(item) {
                     if (item.indexOf('javascript:') === 0) {
                       var script = item.replace(/^javascript:/, '');
+                      console.log('>>>', script)
                       content = eval(item.replace(/^javascript:/, ''))
                       return true;
                     }
