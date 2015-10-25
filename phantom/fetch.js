@@ -166,7 +166,7 @@ openPage(settings.content || settings.url, function(status) {
                         content = [];
                         $el.each(function(i, el) {
                           attr.some(function(name) {
-                            attrValue = $(el).attr(name);
+                            attrValue = $(el).attr(name) || el[name];
                             if (attrValue) {
                               attrValue = attrValue.trim();
                               return true
@@ -176,7 +176,7 @@ openPage(settings.content || settings.url, function(status) {
                         })
                       } else {
                         attr.some(function(name) {
-                          attrValue = $($el[0]).attr(name);
+                          attrValue = $($el[0]).attr(name) || $el[0][name];
                           if (attrValue) {
                             attrValue = attrValue.trim();
                             return true
