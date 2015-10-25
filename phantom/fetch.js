@@ -84,7 +84,7 @@ function waitFor(selectors, callback) {
     callback();
   } else {
     setTimeout(function() {
-      waitFor(page, selectors, callback);
+      waitFor(selectors, callback);
     }, 100);
   }
 }
